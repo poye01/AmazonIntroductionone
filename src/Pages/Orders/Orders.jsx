@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import LayOut from "../../Components/LayOut/LayOut";
+import Layout from "../../components/Layout/Layout";
 import classes from "./Orders.module.css";
 import { db } from "../../utility/firebase";
 import { DataContext } from "../../components/DataProvider/DataProvider";
-import ProductCard from "../../Components/Product/ProductCard";
+import ProductCard from "../../components/Product/ProductCard";
 
 function Orders() {
   const [{ user }, dispatch] = useContext(DataContext);
@@ -30,7 +30,7 @@ function Orders() {
   }, []);
 
   return (
-    <LayOut>
+    <Layout>
       <section className={classes.container}>
         <div className={classes.orders__container}>
           <h2>Your Orders</h2>
@@ -52,7 +52,7 @@ function Orders() {
           </div>
         </div>
       </section>
-    </LayOut>
+    </Layout>
   );
 }
 

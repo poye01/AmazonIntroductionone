@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import classes from "./Payment.module.css";
-import LayOut from "../../Components/LayOut/LayOut";
+import Layout from "../../components/Layout/Layout";
 import { DataContext } from "../../components/DataProvider/DataProvider";
-import ProductCard from "../../Components/Product/ProductCard";
+import ProductCard from "../../components/Product/ProductCard";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
+import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
 import { axiosInstance } from "../../Api/axios";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../utility/firebase";
@@ -71,7 +71,7 @@ function Payment() {
   };
 
   return (
-    <LayOut>
+    <Layout>
       <div className={classes.payment__header}>
         Checkout ({totalItem}) items
       </div>
@@ -126,7 +126,7 @@ function Payment() {
           </div>
         </div>
       </section>
-    </LayOut>
+    </Layout>
   );
 }
 
